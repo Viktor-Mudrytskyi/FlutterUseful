@@ -1,5 +1,5 @@
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_useful/core/failures/validation_failures/first_name/base_first_name_failure.dart';
+import 'package:flutter_useful/core/failures/first_name/first_name_failure.dart';
 
 final class FirstNameTooLongFailure extends FirstNameFailure {
   const FirstNameTooLongFailure();

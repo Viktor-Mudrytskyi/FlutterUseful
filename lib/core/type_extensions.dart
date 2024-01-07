@@ -26,6 +26,7 @@ extension NullOrEmptyString on String? {
 
 extension NullOrEmptyList on List<dynamic>? {
   bool get isNullOrEmpty => (this ?? []).isEmpty;
+  bool get isNotNullOrEmpty => (this ?? []).isNotEmpty;
 }
 
 extension IsNull on Object? {

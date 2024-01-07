@@ -1,6 +1,6 @@
-import 'package:flutter_useful/core/failures/validation_failures/first_name/base_first_name_failure.dart';
-import 'package:flutter_useful/core/failures/validation_failures/first_name/first_name_empty_failure.dart';
-import 'package:flutter_useful/core/failures/validation_failures/first_name/first_name_too_long.dart';
+import 'package:flutter_useful/core/failures/first_name/first_name_failure.dart';
+import 'package:flutter_useful/core/failures/first_name/first_name_empty_failure.dart';
+import 'package:flutter_useful/core/failures/first_name/first_name_too_long.dart';
 import 'package:flutter_useful/core/type_extensions.dart';
 import 'package:flutter_useful/core/validation/base_validator.dart';
 
