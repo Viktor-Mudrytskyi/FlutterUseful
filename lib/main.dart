@@ -1,4 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_useful/core/debounce/base_debouncer.dart';
+import 'package:flutter_useful/core/debounce/delayed_debouncer.dart';
+import 'package:flutter_useful/core/debounce/search_debounce.dart';
 import 'package:flutter_useful/core/type_extensions.dart';
 import 'package:flutter_useful/core/validation/field_validation/first_name_validator.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -17,10 +22,9 @@ class MainApp extends StatefulWidget {
 
 class _MainAppState extends State<MainApp> {
   final FirstNameValidator _validator = FirstNameValidator('');
-  void action() {
-    _validator.update('g');
-    setState(() {});
-  }
+  final BaseDebouncer _debouncer = SearchDebouncer(
+    delay: const Duration(milliseconds: 1500),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -41,14 +45,15 @@ class _MainAppState extends State<MainApp> {
                   ),
                 Expanded(
                   child: Center(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        action();
-                        print(_validator.isValid);
-                        print(_validator.value);
-                        print(_validator.failure);
+                    child: TextField(
+                      onChanged: (value) {
+                        print('Trigger');
+                        _debouncer.debounce(
+                          () {
+                            print('Clown');
+                          },
+                        );
                       },
-                      child: const Text('Action'),
                     ),
                   ),
                 ),

@@ -2,7 +2,7 @@ import 'package:flutter_useful/core/failures/first_name/first_name_failure.dart'
 import 'package:flutter_useful/core/failures/first_name/first_name_empty_failure.dart';
 import 'package:flutter_useful/core/failures/first_name/first_name_too_long.dart';
 import 'package:flutter_useful/core/type_extensions.dart';
-import 'package:flutter_useful/core/validation/base_validator.dart';
+import 'package:flutter_useful/core/validation/validator.dart';
 
 final class FirstNameValidator
     extends BaseValidator<String?, FirstNameFailure> {
